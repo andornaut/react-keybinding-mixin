@@ -29,15 +29,10 @@ function isInputEvent(event) {
 }
 
 function dispatchEvent(event) {
-    var isHandled = false;
-
     event = SyntheticKeyboardEvent.getPooled({}, 'KeyboardMixin', event);
     try {
-        isHandled = dispatchCallbacks(event);
+        dispatchCallbacks(event);
     } finally {
-        if (isHandled) {
-            event.preventDefault();
-        }
         if (!event.isPersistent()) {
             event.constructor.release(event);
         }
@@ -45,7 +40,6 @@ function dispatchEvent(event) {
 }
 
 function dispatchCallbacks(event) {
-    var isHandled = false;
     var bindings;
     var binding;
     var options;
@@ -64,12 +58,10 @@ function dispatchCallbacks(event) {
                     && event.shiftKey == options.shift
                     && (options.input || !isInputEvent(event))) {
                     binding.callback(event);
-                    isHandled = true;
                 }
             }
         }
     }
-    return isHandled;
 }
 
 module.exports = {

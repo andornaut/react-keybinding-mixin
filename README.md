@@ -1,7 +1,7 @@
 react-keybinding-mixin
 ====================================
 
-A ReactJS mixin that enables components to bind callbacks to keyboard events.
+A [ReactJS][react] mixin that enables components to bind callbacks to keyboard events.
 
 ## Install
 
@@ -37,7 +37,6 @@ modifier keys to which the key-binding should apply. Additionally, if
 the ``keydown`` event is triggered on an input field or button.
 
 The ``this.KEYS`` map is also available to make it easier to bind certain key combinations as in the example above. 
-
 ```
 DEFAULT_OPTIONS = {
     alt: false,
@@ -69,6 +68,10 @@ KEYS = {
 };
 ```
 
+The [event][react-event] object is passed to the callback function. You can use 
+this to, among other things, prevent the default action from being triggered by 
+calling ``event.preventDefault()``.
+
 ## Contributing
 
 Contributions of any sort are welcome.
@@ -78,3 +81,5 @@ Contributions of any sort are welcome.
 [MIT][license].
 
 [license]: /LICENSE
+[react]: https://facebook.github.io/react/
+[react-event]: https://facebook.github.io/react/docs/events.html#keyboard-events
