@@ -1,4 +1,4 @@
-react-keybinding
+react-keybinding-mixin
 ====================================
 
 A ReactJS mixin that enables components to bind callbacks keyboard events.
