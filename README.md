@@ -1,7 +1,7 @@
 react-keybinding-mixin
 ====================================
 
-A ReactJS mixin that enables components to bind callbacks keyboard events.
+A ReactJS mixin that enables components to bind callbacks to keyboard events.
 
 ## Install
 

@@ -3,14 +3,14 @@
   "bugs": {
     "url": "https://github.com/andornaut/react-keybinding-mixin/issues"
   },
-  "description": "A ReactJS mixin that enables components to bind callbacks keyboard events.",
+  "description": "A ReactJS mixin that enables components to bind callbacks to keyboard events.",
   "dependencies": {
     "react": "*"
   },
   "keywords": [
-    "react",
-    "keyboard",
     "events",
+    "keyboard",
+    "react",
     "shortcuts"
   ],
   "license": "MIT",
@@ -20,5 +20,5 @@
     "type": "git",
     "url": "https://github.com/andornaut/react-keybinding-mixin.git"
   },
-  "version": "0.0.4"
+  "version": "0.0.5"
 }
