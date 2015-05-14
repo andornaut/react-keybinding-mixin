@@ -129,7 +129,7 @@ module.exports = {
      * Bind a callback to the keydown event for a particular key.
      *
      * The options argument may contain booleans which describe the modifier
-     * keys for which the key-binding should apply. If options.input is true,
+     * keys to which the key-binding should apply. If options.input is true,
      * then the supplied callback will be invoked even if the keydown event
      * is triggered on an input field or button.
      *

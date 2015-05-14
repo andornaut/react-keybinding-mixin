@@ -29,6 +29,47 @@ module.exports = React.createClass({
 
 ```
 
+## Keybinding
+
+The ``options`` argument to ``onKey()`` may contain booleans which describe the 
+modifier keys to which the key-binding should apply. Additionally, if 
+``options.input`` is true, then the supplied callback will be invoked even if 
+the ``keydown`` event is triggered on an input field or button.
+
+The ``this.KEYS`` map is also available to make it easier to bind certain key combinations as in the example above. 
+
+```
+DEFAULT_OPTIONS = {
+    alt: false,
+    ctrl: false,
+    meta: false,
+    shift: false,
+    input: false
+};
+
+KEYS = {
+    BACKSPACE: 8,
+    TAB: 9,
+    ENTER: 13,
+    CAPS_LOCK: 20,
+    ESC: 27,
+    SPACE: 32,
+    PAGE_UP: 33,
+    PAGE_DOWN: 34,
+    END: 35,
+    HOME: 36,
+    LEFT: 37,
+    RIGHT: 39,
+    UP: 38,
+    DOWN: 40,
+    INSERT: 45,
+    DEL: 46,
+    FORWARD_SLASH: 191,
+    BACKSLASH: 222
+};
+
+```
+
 ## Contributing
 
 Contributions of any sort are welcome.
