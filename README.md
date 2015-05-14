@@ -26,7 +26,7 @@ module.exports = React.createClass({
             // Handle keyboard event.
         }, { ctrl: true, shift: true });
     }
-
+}
 ```
 
 ## Keybinding
