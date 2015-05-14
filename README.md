@@ -67,7 +67,6 @@ KEYS = {
     FORWARD_SLASH: 191,
     BACKSLASH: 222
 };
-
 ```
 
 ## Contributing
