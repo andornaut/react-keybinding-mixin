@@ -20,12 +20,9 @@ var components = [];
 var listener;
 
 function isInputEvent(event) {
-    var tagName = event.target.tagName;
+    var tag = event.target.tagName;
 
-    return (tagName == 'BUTTON'
-        || tagName == 'INPUT'
-        || tagName == 'SELECT'
-        || tagName == 'TEXTAREA');
+    return tag == 'BUTTON' || tag == 'INPUT' || tag == 'SELECT' || tag == 'TEXTAREA';
 }
 
 function dispatchEvent(event) {
@@ -43,13 +40,13 @@ function dispatchCallbacks(event) {
     var bindings;
     var binding;
     var options;
-    var i = 0;
-    var j = 0;
+    var i;
+    var j;
 
-    for (; i < components.length; i++) {
+    for (i = 0; i < components.length; i++) {
         bindings = components[i].keyBindings[event.keyCode];
         if (bindings) {
-            for (; j < bindings.length; j++) {
+            for (j = 0; j < bindings.length; j++) {
                 binding = bindings[j];
                 options = binding.options;
                 if (event.altKey == options.alt
