@@ -1,9 +1,8 @@
 /**
- * A ReactJS mixin that enables components to bind callbacks keyboard events.
+ * A ReactJS mixin that enables components to bind callbacks to keyboard events.
  */
 
 var assign = require('react/lib/Object.assign');
-var EventListener = require('react/lib/EventListener');
 var SyntheticKeyboardEvent = require('react/lib/SyntheticKeyboardEvent');
 
 var DEFAULT_OPTIONS = {
@@ -13,14 +12,11 @@ var DEFAULT_OPTIONS = {
     shift: false,
     input: false
 };
-
 var EVENT_TYPE = 'keydown';
-
 var components = [];
-var listener;
 
 function isInputEvent(event) {
-    var tag = event.target.tagName;
+    var tag = (event.target || event.nativeEvent.target).tagName;
 
     return tag == 'BUTTON' || tag == 'INPUT' || tag == 'SELECT' || tag == 'TEXTAREA';
 }
@@ -94,8 +90,8 @@ module.exports = {
      */
     componentDidMount: function() {
         // The first component to be mounted installs the event listener.
-        if (!listener) {
-            listener = EventListener.listen(document, EVENT_TYPE, dispatchEvent);
+        if (components.length == 0) {
+            document.addEventListener(EVENT_TYPE, dispatchEvent);
         }
         this.keyBindings = {};
         components.push(this);
@@ -105,13 +101,11 @@ module.exports = {
      * Un-register for keyboard events.
      */
     componentWillUnmount: function() {
-        components.splice(components.indexOf(this), 1);
-
-        // The last component to be unmounted removes the event listener.
-        if (!components.length) {
-            listener.remove();
-            listener = null;
+        // The last component to be unmounted uninstalls the event listener.
+        if (components.length == 0) {
+            document.removeEventListener(EVENT_TYPE, dispatchEvent);
         }
+        components.splice(components.indexOf(this), 1);
     },
 
     /**
