@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+/test/
+/rollup*.js
+/webpack*.js
+.*
+
+=======
 dist
 .idea
 .tmp
+>>>>>>> bc7fe820a66e97b0da257c5dfeeb451a3e92e71b
