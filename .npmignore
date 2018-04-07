@@ -1,5 +1,3 @@
-/test/
-/rollup*.js
-/webpack*.js
-.*
-
+dist
+.idea
+.tmp
