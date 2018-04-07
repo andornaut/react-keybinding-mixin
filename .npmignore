@@ -1,0 +1,5 @@
+/test/
+/rollup*.js
+/webpack*.js
+.*
+
